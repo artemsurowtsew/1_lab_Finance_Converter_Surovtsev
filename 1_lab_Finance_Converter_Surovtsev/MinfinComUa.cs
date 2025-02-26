@@ -12,7 +12,7 @@ namespace _1_lab_Finance_converter_Surovtsev
             Task task = Task.Factory.StartNew(() => SendRequest());
             task.Wait();
             System.Threading.Thread.Sleep(1500);
-            if (currencyDocumentListHtml != null)
+            if (currencyDocumentListHtml != null && currencyDocumentListHtml.Count >= 2)
             {
                 var dollarPurchaseString = currencyDocumentListHtml[0].InnerHtml.ToString();
                 string[] dollarPurchaseStringArray = dollarPurchaseString.Split(new[] { '<' },
@@ -34,7 +34,7 @@ namespace _1_lab_Finance_converter_Surovtsev
         }
         public override string[] GetEuro()
         {
-            if (currencyDocumentListHtml != null)
+            if (currencyDocumentListHtml != null && currencyDocumentListHtml.Count >= 2)
             {
                 var euroPurchaseString = currencyDocumentListHtml[2].InnerHtml.ToString();
                 string[] euroPurchaseStringArray = euroPurchaseString.Split(new[] { '<' },
@@ -56,7 +56,7 @@ namespace _1_lab_Finance_converter_Surovtsev
         }
         public override string[] GetRuble()
         {
-            if (currencyDocumentListHtml != null)
+            if (currencyDocumentListHtml != null && currencyDocumentListHtml.Count >= 2)
             {
                 var rublePurchaseString = currencyDocumentListHtml[4].InnerHtml.ToString();
                 string[] rublePurchaseStringArray = rublePurchaseString.Split(new[] { '<' },

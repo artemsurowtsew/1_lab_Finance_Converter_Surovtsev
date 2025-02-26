@@ -128,32 +128,31 @@ namespace _1_lab_Finance_converter_Surovtsev
             // dataCurrencyTable
             // 
             dataCurrencyTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataCurrencyTable.Location = new Point(32, 42);
+            dataCurrencyTable.Location = new Point(27, 82);
             dataCurrencyTable.Name = "dataCurrencyTable";
             dataCurrencyTable.RowTemplate.Height = 25;
-            dataCurrencyTable.Size = new Size(240, 150);
+            dataCurrencyTable.Size = new Size(679, 254);
             dataCurrencyTable.TabIndex = 0;
             // 
             // button1
             // 
-            button1.Location = new Point(117, 217);
+            button1.Location = new Point(335, 35);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 1;
             button1.Text = "Load Data";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += LoadData_Click; // Підписка на подію кліку
-                                             // 
-                                             // ExchangeRate
-                                             // 
-            ClientSize = new Size(284, 261);
+            button1.Click += LoadData_Click;
+            // 
+            // ExchangeRate
+            // 
+            ClientSize = new Size(745, 360);
             Controls.Add(button1);
             Controls.Add(dataCurrencyTable);
             Name = "ExchangeRate";
             ((System.ComponentModel.ISupportInitialize)dataCurrencyTable).EndInit();
             ResumeLayout(false);
         }
-
 
         public static DataTable SetData()
         {

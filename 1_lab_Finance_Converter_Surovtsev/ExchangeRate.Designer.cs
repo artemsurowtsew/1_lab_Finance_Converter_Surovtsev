@@ -22,7 +22,7 @@ namespace _1_lab_Finance_converter_Surovtsev {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class ExchangeRate {
+    public partial class ExchangeRate : Form {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
