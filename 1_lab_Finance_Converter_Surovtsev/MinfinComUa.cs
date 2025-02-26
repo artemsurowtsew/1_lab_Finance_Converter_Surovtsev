@@ -1,18 +1,22 @@
 ﻿using HtmlAgilityPack;
-
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using HtmlDocument = HtmlAgilityPack.HtmlDocument;
 namespace _1_lab_Finance_converter_Surovtsev
 {
-     public class MinfinComUa : CurrencyAPI
+    public class MinfinComUa : CurrencyAPI
     {
-
-        private static HtmlAgilityPack.HtmlDocument htmlDocument;
         private static List<HtmlNode> currencyDocumentListHtml;
         public override string[] GetDollar()
         {
             Task task = Task.Factory.StartNew(() => SendRequest());
             task.Wait();
             System.Threading.Thread.Sleep(1500);
-            if (currencyDocumentListHtml != null && currencyDocumentListHtml.Count >= 2)
+            if (currencyDocumentListHtml != null)
             {
                 var dollarPurchaseString = currencyDocumentListHtml[0].InnerHtml.ToString();
                 string[] dollarPurchaseStringArray = dollarPurchaseString.Split(new[] { '<' },
@@ -34,7 +38,7 @@ namespace _1_lab_Finance_converter_Surovtsev
         }
         public override string[] GetEuro()
         {
-            if (currencyDocumentListHtml != null && currencyDocumentListHtml.Count >= 2)
+            if (currencyDocumentListHtml != null)
             {
                 var euroPurchaseString = currencyDocumentListHtml[2].InnerHtml.ToString();
                 string[] euroPurchaseStringArray = euroPurchaseString.Split(new[] { '<' },
@@ -56,7 +60,7 @@ namespace _1_lab_Finance_converter_Surovtsev
         }
         public override string[] GetRuble()
         {
-            if (currencyDocumentListHtml != null && currencyDocumentListHtml.Count >= 2)
+            if (currencyDocumentListHtml != null)
             {
                 var rublePurchaseString = currencyDocumentListHtml[4].InnerHtml.ToString();
                 string[] rublePurchaseStringArray = rublePurchaseString.Split(new[] { '<' },
@@ -82,7 +86,7 @@ namespace _1_lab_Finance_converter_Surovtsev
             {
                 var httpClient = new HttpClient();
                 var html = await httpClient.GetStringAsync(Constants.MinfinComUaUrl);
-                var htmlDocument = new HtmlAgilityPack.HtmlDocument();
+                var htmlDocument = new HtmlDocument();
                 htmlDocument.LoadHtml(html);
                 currencyDocumentListHtml = htmlDocument.DocumentNode.Descendants("td")
                 .Where(node => node.GetAttributeValue("class", "")

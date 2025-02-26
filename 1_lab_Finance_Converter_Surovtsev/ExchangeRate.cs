@@ -13,7 +13,7 @@ namespace _1_lab_Finance_converter_Surovtsev
         static string dollarPurchaseFinanceUa, dollarSaleFinanceUa, euroPurchaseFinanceUa,
         euroSaleFinanceUa, rublePurchaseFinanceUa, rubleSaleFinanceUa;
         private DataGridView dataCurrencyTable;
-        private Button button1;
+        public Button LoadData;
 
         public ExchangeRate()
         {
@@ -121,7 +121,7 @@ namespace _1_lab_Finance_converter_Surovtsev
         private void InitializeComponent()
         {
             dataCurrencyTable = new DataGridView();
-            button1 = new Button();
+            LoadData = new Button();
             ((System.ComponentModel.ISupportInitialize)dataCurrencyTable).BeginInit();
             SuspendLayout();
             // 
@@ -134,20 +134,20 @@ namespace _1_lab_Finance_converter_Surovtsev
             dataCurrencyTable.Size = new Size(679, 254);
             dataCurrencyTable.TabIndex = 0;
             // 
-            // button1
+            // LoadData
             // 
-            button1.Location = new Point(335, 35);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 1;
-            button1.Text = "Load Data";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += LoadData_Click;
+            LoadData.Location = new Point(335, 35);
+            LoadData.Name = "LoadData";
+            LoadData.Size = new Size(75, 23);
+            LoadData.TabIndex = 1;
+            LoadData.Text = "Load Data";
+            LoadData.UseVisualStyleBackColor = true;
+            LoadData.Click += LoadData_Click;
             // 
             // ExchangeRate
             // 
             ClientSize = new Size(745, 360);
-            Controls.Add(button1);
+            Controls.Add(LoadData);
             Controls.Add(dataCurrencyTable);
             Name = "ExchangeRate";
             ((System.ComponentModel.ISupportInitialize)dataCurrencyTable).EndInit();

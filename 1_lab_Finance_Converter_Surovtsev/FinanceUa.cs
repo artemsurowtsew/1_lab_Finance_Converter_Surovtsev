@@ -1,13 +1,15 @@
-﻿using HtmlAgilityPack;
+﻿using System;
+using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using HtmlDocument = HtmlAgilityPack.HtmlDocument;
 namespace _1_lab_Finance_converter_Surovtsev
 {
-    public class FinanceUa : CurrencyAPI
+    class FinanceUa : CurrencyAPI
     {
-        private static HtmlAgilityPack.HtmlDocument htmlDocument;
-        private static List<HtmlNode> currencyDocumentListHtml;
-
+        private static HtmlDocument htmlDocument;
         public override string[] GetDollar()
-
         {
             Task task = Task.Factory.StartNew(() => SendRequest());
             task.Wait();
@@ -94,7 +96,7 @@ namespace _1_lab_Finance_converter_Surovtsev
             {
                 var httpClient = new HttpClient();
                 var html = await httpClient.GetStringAsync(Constants.FinanceUaUrl);
-                htmlDocument = new HtmlAgilityPack.HtmlDocument();
+                htmlDocument = new HtmlDocument();
                 htmlDocument.LoadHtml(html);
             }
             catch
