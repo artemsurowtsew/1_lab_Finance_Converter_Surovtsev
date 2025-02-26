@@ -88,7 +88,7 @@ namespace _1_lab_Finance_converter_Surovtsev
         {
             try
             {
-                Finance financeUa = new FinanceUa();
+                FinanceUa financeUa = new FinanceUa();
                 var dollarFinanceUa = financeUa.GetDollar();
                 if (dollarFinanceUa != null)
                 {
