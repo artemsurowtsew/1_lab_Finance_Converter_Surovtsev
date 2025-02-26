@@ -50,7 +50,7 @@ namespace _1_lab_Finance_converter_Surovtsev
             }
             catch
             {
-                MessageBox.Show(ExchangeRateResource.WarningMessage,  ExchangeRate.WarningTitle,
+                MessageBox.Show(ExchangeRate.WarningMessage,  ExchangeRate.WarningTitle,
                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -88,7 +88,7 @@ namespace _1_lab_Finance_converter_Surovtsev
         {
             try
             {
-                FinanceUa financeUa = new FinanceUa();
+                Finance financeUa = new FinanceUa();
                 var dollarFinanceUa = financeUa.GetDollar();
                 if (dollarFinanceUa != null)
                 {

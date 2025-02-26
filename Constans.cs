@@ -1,4 +1,7 @@
 namespace _1_lab_Finance_converter_Surovtsev
+{ 
+
+
     class Constants
 {
     public const string MinfinComUaUrl = "https://minfin.com.ua/ua/currency/";
