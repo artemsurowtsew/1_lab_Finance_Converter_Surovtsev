@@ -12,6 +12,9 @@ namespace _1_lab_Finance_converter_Surovtsev
         euroSaleKursComUa, rublePurchaseKursComUa, rubleSaleKursComUa;
         static string dollarPurchaseFinanceUa, dollarSaleFinanceUa, euroPurchaseFinanceUa,
         euroSaleFinanceUa, rublePurchaseFinanceUa, rubleSaleFinanceUa;
+        private DataGridView dataCurrencyTable;
+        private Button button1;
+
         public ExchangeRate()
         {
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -50,7 +53,7 @@ namespace _1_lab_Finance_converter_Surovtsev
             }
             catch
             {
-                MessageBox.Show(ExchangeRate.WarningMessage,  ExchangeRate.WarningTitle,
+                MessageBox.Show(ExchangeRate.WarningMessage, ExchangeRate.WarningTitle,
                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -80,7 +83,7 @@ namespace _1_lab_Finance_converter_Surovtsev
             }
             catch
             {
-                MessageBox.Show( ExchangeRate.WarningMessage,  ExchangeRate.WarningTitle,
+                MessageBox.Show(ExchangeRate.WarningMessage, ExchangeRate.WarningTitle,
                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -110,34 +113,72 @@ namespace _1_lab_Finance_converter_Surovtsev
             }
             catch
             {
-                MessageBox.Show( ExchangeRate.WarningMessage,  ExchangeRate.WarningTitle,
+                MessageBox.Show(ExchangeRate.WarningMessage, ExchangeRate.WarningTitle,
                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void InitializeComponent()
+        {
+            dataCurrencyTable = new DataGridView();
+            button1 = new Button();
+            ((System.ComponentModel.ISupportInitialize)dataCurrencyTable).BeginInit();
+            SuspendLayout();
+            // 
+            // dataCurrencyTable
+            // 
+            dataCurrencyTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataCurrencyTable.Location = new Point(32, 42);
+            dataCurrencyTable.Name = "dataCurrencyTable";
+            dataCurrencyTable.RowTemplate.Height = 25;
+            dataCurrencyTable.Size = new Size(240, 150);
+            dataCurrencyTable.TabIndex = 0;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(117, 217);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 1;
+            button1.Text = "Load Data";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += LoadData_Click; // Підписка на подію кліку
+                                             // 
+                                             // ExchangeRate
+                                             // 
+            ClientSize = new Size(284, 261);
+            Controls.Add(button1);
+            Controls.Add(dataCurrencyTable);
+            Name = "ExchangeRate";
+            ((System.ComponentModel.ISupportInitialize)dataCurrencyTable).EndInit();
+            ResumeLayout(false);
+        }
+
+
         public static DataTable SetData()
         {
             DataTable dataTable = new DataTable();
-            dataTable.Columns.Add( ExchangeRate.ResourceColumnTitle, typeof(string));
-            dataTable.Columns.Add( ExchangeRate.CurrencyColumnTitle, typeof(string));
-            dataTable.Columns.Add( ExchangeRate.PurchaseColumnTitle, typeof(string));
-            dataTable.Columns.Add( ExchangeRate.SaleColumnTitle, typeof(string));
-            dataTable.Rows.Add( ExchangeRate.MinfinComUaTitle,  ExchangeRate.Dollar,
+            dataTable.Columns.Add(ExchangeRate.ResourceColumnTitle, typeof(string));
+            dataTable.Columns.Add(ExchangeRate.CurrencyColumnTitle, typeof(string));
+            dataTable.Columns.Add(ExchangeRate.PurchaseColumnTitle, typeof(string));
+            dataTable.Columns.Add(ExchangeRate.SaleColumnTitle, typeof(string));
+            dataTable.Rows.Add(ExchangeRate.MinfinComUaTitle, ExchangeRate.Dollar,
             dollarPurchaseMinfinComUa, dollarSaleMinfinComUa);
-            dataTable.Rows.Add( ExchangeRate.MinfinComUaTitle,  ExchangeRate.Euro,
+            dataTable.Rows.Add(ExchangeRate.MinfinComUaTitle, ExchangeRate.Euro,
             euroPurchaseMinfinComUa, euroSaleMinfinComUa);
-            dataTable.Rows.Add( ExchangeRate.MinfinComUaTitle,  ExchangeRate.Ruble,
+            dataTable.Rows.Add(ExchangeRate.MinfinComUaTitle, ExchangeRate.Ruble,
             rublePurchaseMinfinComUa, rubleSaleMinfinComUa);
-            dataTable.Rows.Add(ExchangeRate.KursComUaTitle,  ExchangeRate.Dollar,
+            dataTable.Rows.Add(ExchangeRate.KursComUaTitle, ExchangeRate.Dollar,
             dollarPurchaseKursComUa, dollarSaleKursComUa);
-            dataTable.Rows.Add( ExchangeRate.KursComUaTitle,  ExchangeRate.Euro,
+            dataTable.Rows.Add(ExchangeRate.KursComUaTitle, ExchangeRate.Euro,
             euroPurchaseKursComUa, euroSaleKursComUa);
-            dataTable.Rows.Add( ExchangeRate.KursComUaTitle,  ExchangeRate.Ruble,
+            dataTable.Rows.Add(ExchangeRate.KursComUaTitle, ExchangeRate.Ruble,
             rublePurchaseKursComUa, rubleSaleKursComUa);
-            dataTable.Rows.Add( ExchangeRate.FinanceUaTitle,  ExchangeRate.Dollar,
+            dataTable.Rows.Add(ExchangeRate.FinanceUaTitle, ExchangeRate.Dollar,
             dollarPurchaseFinanceUa, dollarSaleFinanceUa);
-            dataTable.Rows.Add( ExchangeRate.FinanceUaTitle,  ExchangeRate.Euro,
+            dataTable.Rows.Add(ExchangeRate.FinanceUaTitle, ExchangeRate.Euro,
             euroPurchaseFinanceUa, euroSaleFinanceUa);
-            dataTable.Rows.Add( ExchangeRate.FinanceUaTitle,  ExchangeRate.Ruble,
+            dataTable.Rows.Add(ExchangeRate.FinanceUaTitle, ExchangeRate.Ruble,
             rublePurchaseFinanceUa, rubleSaleFinanceUa);
             return dataTable;
         }

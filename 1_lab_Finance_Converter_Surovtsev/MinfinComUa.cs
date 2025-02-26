@@ -1,9 +1,11 @@
-﻿namespace _1_lab_Finance_converter_Surovtsev
+﻿using HtmlAgilityPack;
+
+namespace _1_lab_Finance_converter_Surovtsev
 {
      public class MinfinComUa : CurrencyAPI
     {
 
-        private static HtmlDocument htmlDocument;
+        private static HtmlAgilityPack.HtmlDocument htmlDocument;
         private static List<HtmlNode> currencyDocumentListHtml;
         public override string[] GetDollar()
         {
@@ -80,7 +82,7 @@
             {
                 var httpClient = new HttpClient();
                 var html = await httpClient.GetStringAsync(Constants.MinfinComUaUrl);
-                var htmlDocument = new HtmlDocument();
+                var htmlDocument = new HtmlAgilityPack.HtmlDocument();
                 htmlDocument.LoadHtml(html);
                 currencyDocumentListHtml = htmlDocument.DocumentNode.Descendants("td")
                 .Where(node => node.GetAttributeValue("class", "")
@@ -88,7 +90,7 @@
             }
             catch
             {
-                MessageBox.Show(Properties.Resources.WarningMessage, Properties.Resources.WarningTitle,
+                MessageBox.Show(ExchangeRate.WarningMessage, ExchangeRate.WarningTitle,
                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }

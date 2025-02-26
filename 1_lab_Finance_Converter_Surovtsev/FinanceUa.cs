@@ -1,8 +1,9 @@
-﻿namespace _1_lab_Finance_converter_Surovtsev
+﻿using HtmlAgilityPack;
+namespace _1_lab_Finance_converter_Surovtsev
 {
     public class FinanceUa : CurrencyAPI
     {
-        private static HtmlDocument htmlDocument;
+        private static HtmlAgilityPack.HtmlDocument htmlDocument;
         private static List<HtmlNode> currencyDocumentListHtml;
 
         public override string[] GetDollar()
@@ -93,12 +94,12 @@
             {
                 var httpClient = new HttpClient();
                 var html = await httpClient.GetStringAsync(Constants.FinanceUaUrl);
-                htmlDocument = new HtmlDocument();
+                htmlDocument = new HtmlAgilityPack.HtmlDocument();
                 htmlDocument.LoadHtml(html);
             }
             catch
             {
-                MessageBox.Show(Properties.Resources.WarningMessage, Properties.Resources.WarningTitle,
+                MessageBox.Show(ExchangeRate.WarningMessage, ExchangeRate.WarningTitle,
                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
