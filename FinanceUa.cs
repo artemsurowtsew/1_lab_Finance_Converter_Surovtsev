@@ -1,6 +1,9 @@
 ﻿namespace _1_lab_Finance_converter_Surovtsev
-internal class FinanceUa
+internal class FinanceUa : CurrencyAPI
 {
+    private static HtmlDocument htmlDocument;
+    private static List<HtmlNode> currencyDocumentListHtml;
+
     public override string[] GetDollar()
 
     {

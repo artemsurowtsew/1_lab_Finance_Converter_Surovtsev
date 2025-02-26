@@ -1,5 +1,8 @@
-﻿namespace _1_lab_Finance_converter_Surovtsev
-   internal  class KursComUa {
+﻿ internal  class KursComUa : CurrencyAPI
+{
+    private static HtmlDocument htmlDocument;
+    private static List<HtmlNode> currencyDocumentListHtml;
+
     public override string[] GetDollar()
     {
         Task task = Task.Factory.StartNew(() => SendRequest());

@@ -50,7 +50,7 @@ namespace _1_lab_Finance_converter_Surovtsev
             }
             catch
             {
-                MessageBox.Show(Properties.Resources.WarningMessage, Properties.Resources.WarningTitle,
+                MessageBox.Show(ExchangeRateResource.WarningMessage,  ExchangeRate.WarningTitle,
                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -80,7 +80,7 @@ namespace _1_lab_Finance_converter_Surovtsev
             }
             catch
             {
-                MessageBox.Show(Properties.Resources.WarningMessage, Properties.Resources.WarningTitle,
+                MessageBox.Show( ExchangeRate.WarningMessage,  ExchangeRate.WarningTitle,
                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -110,34 +110,34 @@ namespace _1_lab_Finance_converter_Surovtsev
             }
             catch
             {
-                MessageBox.Show(Properties.Resources.WarningMessage, Properties.Resources.WarningTitle,
+                MessageBox.Show( ExchangeRate.WarningMessage,  ExchangeRate.WarningTitle,
                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         public static DataTable SetData()
         {
             DataTable dataTable = new DataTable();
-            dataTable.Columns.Add(Properties.Resources.ResourceColumnTitle, typeof(string));
-            dataTable.Columns.Add(Properties.Resources.CurrencyColumnTitle, typeof(string));
-            dataTable.Columns.Add(Properties.Resources.PurchaseColumnTitle, typeof(string));
-            dataTable.Columns.Add(Properties.Resources.SaleColumnTitle, typeof(string));
-            dataTable.Rows.Add(Properties.Resources.MinfinComUaTitle, Properties.Resources.Dollar,
+            dataTable.Columns.Add( ExchangeRate.ResourceColumnTitle, typeof(string));
+            dataTable.Columns.Add( ExchangeRate.CurrencyColumnTitle, typeof(string));
+            dataTable.Columns.Add( ExchangeRate.PurchaseColumnTitle, typeof(string));
+            dataTable.Columns.Add( ExchangeRate.SaleColumnTitle, typeof(string));
+            dataTable.Rows.Add( ExchangeRate.MinfinComUaTitle,  ExchangeRate.Dollar,
             dollarPurchaseMinfinComUa, dollarSaleMinfinComUa);
-            dataTable.Rows.Add(Properties.Resources.MinfinComUaTitle, Properties.Resources.Euro,
+            dataTable.Rows.Add( ExchangeRate.MinfinComUaTitle,  ExchangeRate.Euro,
             euroPurchaseMinfinComUa, euroSaleMinfinComUa);
-            dataTable.Rows.Add(Properties.Resources.MinfinComUaTitle, Properties.Resources.Ruble,
+            dataTable.Rows.Add( ExchangeRate.MinfinComUaTitle,  ExchangeRate.Ruble,
             rublePurchaseMinfinComUa, rubleSaleMinfinComUa);
-            dataTable.Rows.Add(Properties.Resources.KursComUaTitle, Properties.Resources.Dollar,
+            dataTable.Rows.Add(ExchangeRate.KursComUaTitle,  ExchangeRate.Dollar,
             dollarPurchaseKursComUa, dollarSaleKursComUa);
-            dataTable.Rows.Add(Properties.Resources.KursComUaTitle, Properties.Resources.Euro,
+            dataTable.Rows.Add( ExchangeRate.KursComUaTitle,  ExchangeRate.Euro,
             euroPurchaseKursComUa, euroSaleKursComUa);
-            dataTable.Rows.Add(Properties.Resources.KursComUaTitle, Properties.Resources.Ruble,
+            dataTable.Rows.Add( ExchangeRate.KursComUaTitle,  ExchangeRate.Ruble,
             rublePurchaseKursComUa, rubleSaleKursComUa);
-            dataTable.Rows.Add(Properties.Resources.FinanceUaTitle, Properties.Resources.Dollar,
+            dataTable.Rows.Add( ExchangeRate.FinanceUaTitle,  ExchangeRate.Dollar,
             dollarPurchaseFinanceUa, dollarSaleFinanceUa);
-            dataTable.Rows.Add(Properties.Resources.FinanceUaTitle, Properties.Resources.Euro,
+            dataTable.Rows.Add( ExchangeRate.FinanceUaTitle,  ExchangeRate.Euro,
             euroPurchaseFinanceUa, euroSaleFinanceUa);
-            dataTable.Rows.Add(Properties.Resources.FinanceUaTitle, Properties.Resources.Ruble,
+            dataTable.Rows.Add( ExchangeRate.FinanceUaTitle,  ExchangeRate.Ruble,
             rublePurchaseFinanceUa, rubleSaleFinanceUa);
             return dataTable;
         }

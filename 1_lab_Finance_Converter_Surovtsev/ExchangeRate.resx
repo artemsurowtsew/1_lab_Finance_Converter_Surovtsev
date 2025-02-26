@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CurrencyColum Title" xml:space="preserve">
+  <data name="CurrencyColumnTitle" xml:space="preserve">
     <value>Currency</value>
   </data>
   <data name="Dollar" xml:space="preserve">
@@ -135,22 +135,22 @@
   <data name="MinfinComUaTitle" xml:space="preserve">
     <value>Minfin.com.ua</value>
   </data>
-  <data name="PurchaseColumn Title" xml:space="preserve">
+  <data name="PurchaseColumnTitle" xml:space="preserve">
     <value>Purchase</value>
   </data>
-  <data name="ResourceColumn Title" xml:space="preserve">
+  <data name="ResourceColumnTitle" xml:space="preserve">
     <value>Resource</value>
   </data>
   <data name="Ruble" xml:space="preserve">
     <value>RUB</value>
   </data>
-  <data name="SaleColumn Title" xml:space="preserve">
+  <data name="SaleColumnTitle" xml:space="preserve">
     <value>Sale</value>
-  </data>
-  <data name="Warning Title" xml:space="preserve">
-    <value>Warning</value>
   </data>
   <data name="WarningMessage" xml:space="preserve">
     <value>Something went wrong. Please restart the aplication.</value>
+  </data>
+  <data name="WarningTitle" xml:space="preserve">
+    <value>Warning</value>
   </data>
 </root>

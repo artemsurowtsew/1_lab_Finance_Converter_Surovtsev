@@ -1,8 +1,9 @@
-﻿namespace _1_lab_Finance_converter_Surovtsev
+﻿ class MinfinComUa : CurrencyAPI
+{
 
- class MinfinComUa
-    {
-        public override string[] GetDollar()
+    private static HtmlDocument htmlDocument;
+    private static List<HtmlNode> currencyDocumentListHtml;
+    public override string[] GetDollar()
     {
         Task task = Task.Factory.StartNew(() => SendRequest());
         task.Wait();
