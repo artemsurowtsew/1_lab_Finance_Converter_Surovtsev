@@ -12,8 +12,8 @@ namespace _1_lab_Finance_converter_Surovtsev
         euroSaleKursComUa, rublePurchaseKursComUa, rubleSaleKursComUa;
         static string dollarPurchaseFinanceUa, dollarSaleFinanceUa, euroPurchaseFinanceUa,
         euroSaleFinanceUa, rublePurchaseFinanceUa, rubleSaleFinanceUa;
-        static string dollarPurchasePrivate, dollarSalePrivate;
-        static string euroPurchasePrivate, euroSalePrivate;
+        static string dollarPurchasePrivat = "N/A", dollarSalePrivat = "N/A";
+        static string euroPurchasePrivat = "N/A", euroSalePrivat = "N/A";
 
         private DataGridView dataCurrencyTable;
         public Button LoadData;
@@ -60,6 +60,35 @@ namespace _1_lab_Finance_converter_Surovtsev
                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+        public static void LoadPrivatUaData()
+        {
+            try
+            {
+                PrivatBankAPI privatBankApi = new PrivatBankAPI();
+
+                var dollarPrivatBank = privatBankApi.GetDollar();
+                if (dollarPrivatBank != null)
+                {
+                    dollarPurchasePrivat = dollarPrivatBank[0];
+                    dollarSalePrivat = dollarPrivatBank[1];
+                }
+
+                var euroPrivatBank = privatBankApi.GetEuro();
+                if (euroPrivatBank != null)
+                {
+                    euroPurchasePrivat = euroPrivatBank[0];
+                    euroSalePrivat = euroPrivatBank[1];
+                }
+
+                
+            }
+            catch
+            {
+                MessageBox.Show(ExchangeRate.WarningMessage, ExchangeRate.WarningTitle,
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
         public static void LoadKursComUaData()
         {
             try
@@ -182,8 +211,8 @@ namespace _1_lab_Finance_converter_Surovtsev
             euroPurchaseFinanceUa, euroSaleFinanceUa);
             dataTable.Rows.Add(ExchangeRate.FinanceUaTitle, ExchangeRate.Ruble,
             rublePurchaseFinanceUa, rubleSaleFinanceUa);
-            dataTable.Rows.Add(ExchangeRate.PrivatUaTitle, ExchangeRate.Dollar, dollarPurchasePrivate, dollarSalePrivate);
-            dataTable.Rows.Add(ExchangeRate.PrivatUaTitle, ExchangeRate.Euro, euroPurchasePrivate, euroSalePrivate);
+            dataTable.Rows.Add(ExchangeRate.PrivatUaTitle, ExchangeRate.Dollar, dollarPurchasePrivat, dollarSalePrivat);
+            dataTable.Rows.Add(ExchangeRate.PrivatUaTitle, ExchangeRate.Euro, euroPurchasePrivat, euroSalePrivat);
             return dataTable;
         }
     }

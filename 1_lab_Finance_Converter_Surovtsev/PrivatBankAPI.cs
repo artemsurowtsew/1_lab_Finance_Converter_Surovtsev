@@ -26,7 +26,7 @@ namespace _1_lab_Finance_converter_Surovtsev
 
     public override string[] GetRuble()
     {
-        return new string[] { "Недоступно", "Недоступно" };  // ПриватБанк не надає курс рубля
+        return new string[] { "Недоступно", "Недоступно" };  
     }
 
     private async Task<string[]> GetCurrency(string currencyCode)
