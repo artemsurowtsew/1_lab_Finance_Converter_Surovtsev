@@ -5,7 +5,7 @@ public abstract class CurrencyAPI
 {
     public abstract string[] GetDollar();
     public abstract string[] GetEuro();
-    public abstract string[] GetRuble();
+    public abstract string[] GetZloty();
 }
 }
 

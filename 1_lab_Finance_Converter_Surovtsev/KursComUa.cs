@@ -1,10 +1,9 @@
 ﻿using HtmlAgilityPack;
-
+using HtmlDocument = HtmlAgilityPack.HtmlDocument;
 namespace _1_lab_Finance_converter_Surovtsev
 {
     public class KursComUa : CurrencyAPI
     {
-        private static HtmlAgilityPack.HtmlDocument htmlDocument;
         private static List<HtmlNode> currencyDocumentListHtml;
 
         public override string[] GetDollar()
@@ -48,19 +47,19 @@ namespace _1_lab_Finance_converter_Surovtsev
                 return null;
             }
         }
-        public override string[] GetRuble()
+        public override string[] GetZloty()
         {
             if (currencyDocumentListHtml != null)
             {
-                var rublePurchaseString = currencyDocumentListHtml[8].InnerHtml.ToString();
-                string[] rublePurchaseStringArray = rublePurchaseString.Split(new[] { '<' },
+                var PLNPurchaseString = currencyDocumentListHtml[8].InnerHtml.ToString();
+                string[] PLNPurchaseStringArray = PLNPurchaseString.Split(new[] { '<' },
                 StringSplitOptions.RemoveEmptyEntries);
-                var rublePurchaseKursComUa = rublePurchaseStringArray[0];
-                var rubleSaleString = currencyDocumentListHtml[9].InnerHtml.ToString();
-                string[] rubleSaleStringArray = rubleSaleString.Split(new[] { '<' },
+                var PLNPurchaseKursComUa = PLNPurchaseStringArray[0];
+                var PLNSaleString = currencyDocumentListHtml[9].InnerHtml.ToString();
+                string[] PLNSaleStringArray = PLNSaleString.Split(new[] { '<' },
                 StringSplitOptions.RemoveEmptyEntries);
-                var rubleSaleKursComUa = rubleSaleStringArray[0];
-                return new string[] { rublePurchaseKursComUa, rubleSaleKursComUa };
+                var PLNSaleKursComUa = PLNSaleStringArray[0];
+                return new string[] { PLNPurchaseKursComUa, PLNSaleKursComUa };
             }
             else
             {

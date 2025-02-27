@@ -63,28 +63,28 @@ namespace _1_lab_Finance_converter_Surovtsev
                 return null;
             }
         }
-        public override string[] GetRuble()
+        public override string[] GetZloty()
         {
             if (htmlDocument != null)
             {
-                var rublePurchaseDocumentListHtml = htmlDocument.DocumentNode.Descendants("tr")
+                var PLNPurchaseDocumentListHtml = htmlDocument.DocumentNode.Descendants("tr")
                 .Where(node => node.GetAttributeValue("class", "")
                 .Equals("topcurs2")).ToList();
-                var rublePurchaseDocumentList = rublePurchaseDocumentListHtml[0].Descendants("td")
+                var PLNPurchaseDocumentList = PLNPurchaseDocumentListHtml[0].Descendants("td")
                 .Where(node => node.GetAttributeValue("class", "")
                 .Equals("value")).ToList();
-                var rublePurchaseString = rublePurchaseDocumentList[0].InnerHtml.ToString();
-                string[] rublePurchaseStringArray = rublePurchaseString.Split(new[] { '<' },
+                var PLNPurchaseString = PLNPurchaseDocumentList[0].InnerHtml.ToString();
+                string[] PLNPurchaseStringArray = PLNPurchaseString.Split(new[] { '<' },
                 StringSplitOptions.RemoveEmptyEntries);
-                var rublePurchaseFinanceUa = rublePurchaseStringArray[0];
-                var rubleSaleDocumentList = rublePurchaseDocumentListHtml[0].Descendants("td")
+                var PLNPurchaseFinanceUa = PLNPurchaseStringArray[0];
+                var PLNSaleDocumentList = PLNPurchaseDocumentListHtml[0].Descendants("td")
                 .Where(node => node.GetAttributeValue("class", "")
                 .Equals("value up")).ToList();
-                var rubleSaleString = rubleSaleDocumentList[0].InnerHtml.ToString();
-                string[] rubleSaleStringArray = rubleSaleString.Split(new[] { '<' },
+                var PLNSaleString = PLNSaleDocumentList[0].InnerHtml.ToString();
+                string[] PLNSaleStringArray = PLNSaleString.Split(new[] { '<' },
                 StringSplitOptions.RemoveEmptyEntries);
-                var rubleSaleFinanceUa = rubleSaleStringArray[0];
-                return new string[] { rublePurchaseFinanceUa, rubleSaleFinanceUa };
+                var PLNSaleFinanceUa = PLNSaleStringArray[0];
+                return new string[] { PLNPurchaseFinanceUa, PLNSaleFinanceUa };
             }
             else
             {

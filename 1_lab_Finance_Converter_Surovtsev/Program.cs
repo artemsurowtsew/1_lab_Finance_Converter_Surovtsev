@@ -14,10 +14,8 @@ namespace _1_lab_Finance_converter_Surovtsev
         [STAThread]
         static void Main()
         {
-            // Це дозволяє працювати з графічним інтерфейсом Windows Forms.
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            // Запускаємо вашу форму ExchangeRate як головну форму.
             Application.Run(new ExchangeRate());
         }
     }

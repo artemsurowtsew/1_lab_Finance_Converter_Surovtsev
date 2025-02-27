@@ -24,7 +24,7 @@ namespace _1_lab_Finance_converter_Surovtsev
         return task.Result;
     }
 
-    public override string[] GetRuble()
+    public override string[] GetZloty()
     {
         return new string[] { "Недоступно", "Недоступно" };  
     }

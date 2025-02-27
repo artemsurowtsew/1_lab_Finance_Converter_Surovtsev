@@ -6,16 +6,15 @@ namespace _1_lab_Finance_converter_Surovtsev
     public partial class ExchangeRate : Form
     {
         static string dollarPurchaseMinfinComUa, dollarSaleMinfinComUa,
-        euroPurchaseMinfinComUa, euroSaleMinfinComUa, rublePurchaseMinfinComUa,
-        rubleSaleMinfinComUa;
+        euroPurchaseMinfinComUa, euroSaleMinfinComUa, PLNPurchaseMinfinComUa,
+        PLNSaleMinfinComUa;
         static string dollarPurchaseKursComUa, dollarSaleKursComUa, euroPurchaseKursComUa,
-        euroSaleKursComUa, rublePurchaseKursComUa, rubleSaleKursComUa;
+        euroSaleKursComUa, PLNPurchaseKursComUa, PLNSaleKursComUa;
         static string dollarPurchaseFinanceUa, dollarSaleFinanceUa, euroPurchaseFinanceUa,
-        euroSaleFinanceUa, rublePurchaseFinanceUa, rubleSaleFinanceUa;
+        euroSaleFinanceUa, PLNPurchaseFinanceUa, PLNSaleFinanceUa;
         static string dollarPurchasePrivat= "N/A", dollarSalePrivat = "N/A";
         static string euroPurchasePrivat = "N/A", euroSalePrivat = "N/A";
-
-        private DataGridView dataCurrencyTable;
+        public DataGridView dataCurrencyTable;
         public Button LoadData;
 
         public ExchangeRate()
@@ -47,11 +46,11 @@ namespace _1_lab_Finance_converter_Surovtsev
                     euroPurchaseMinfinComUa = euroMinfinComUa[0];
                     euroSaleMinfinComUa = euroMinfinComUa[1];
                 }
-                var rubleMinfinComUa = minfinComUa.GetRuble();
-                if (rubleMinfinComUa != null)
+                var PLNMinfinComUa = minfinComUa.GetZloty();
+                if (PLNMinfinComUa != null)
                 {
-                    rublePurchaseMinfinComUa = rubleMinfinComUa[0];
-                    rubleSaleMinfinComUa = rubleMinfinComUa[1];
+                    PLNPurchaseMinfinComUa = PLNMinfinComUa[0];
+                    PLNSaleMinfinComUa = PLNMinfinComUa[1];
                 }
             }
             catch
@@ -106,11 +105,11 @@ namespace _1_lab_Finance_converter_Surovtsev
                     euroPurchaseKursComUa = euroKursKomUa[0];
                     euroSaleKursComUa = euroKursKomUa[1];
                 }
-                var rubleKursKomUa = kursComUa.GetRuble();
-                if (rubleKursKomUa != null)
+                var PLNKursKomUa = kursComUa.GetZloty();
+                if (PLNKursKomUa != null)
                 {
-                    rublePurchaseKursComUa = rubleKursKomUa[0];
-                    rubleSaleKursComUa = rubleKursKomUa[1];
+                    PLNPurchaseKursComUa = PLNKursKomUa[0];
+                    PLNSaleKursComUa = PLNKursKomUa[1];
                 }
             }
             catch
@@ -136,11 +135,11 @@ namespace _1_lab_Finance_converter_Surovtsev
                     euroPurchaseFinanceUa = euroFinanceUa[0];
                     euroSaleFinanceUa = euroFinanceUa[1];
                 }
-                var rubleFinanceUa = financeUa.GetRuble();
-                if (rubleFinanceUa != null)
+                var PLNFinanceUa = financeUa.GetZloty();
+                if (PLNFinanceUa != null)
                 {
-                    rublePurchaseFinanceUa = rubleFinanceUa[0];
-                    rubleSaleFinanceUa = rubleFinanceUa[1];
+                    PLNPurchaseFinanceUa = PLNFinanceUa[0];
+                    PLNSaleFinanceUa = PLNFinanceUa[1];
                 }
             }
             catch
@@ -197,20 +196,20 @@ namespace _1_lab_Finance_converter_Surovtsev
             dollarPurchaseMinfinComUa, dollarSaleMinfinComUa);
             dataTable.Rows.Add(ExchangeRate.MinfinComUaTitle, ExchangeRate.Euro,
             euroPurchaseMinfinComUa, euroSaleMinfinComUa);
-            dataTable.Rows.Add(ExchangeRate.MinfinComUaTitle, ExchangeRate.Ruble,
-            rublePurchaseMinfinComUa, rubleSaleMinfinComUa);
+            dataTable.Rows.Add(ExchangeRate.MinfinComUaTitle, ExchangeRate.PLN,
+            PLNPurchaseMinfinComUa, PLNSaleMinfinComUa);
             dataTable.Rows.Add(ExchangeRate.KursComUaTitle, ExchangeRate.Dollar,
             dollarPurchaseKursComUa, dollarSaleKursComUa);
             dataTable.Rows.Add(ExchangeRate.KursComUaTitle, ExchangeRate.Euro,
             euroPurchaseKursComUa, euroSaleKursComUa);
-            dataTable.Rows.Add(ExchangeRate.KursComUaTitle, ExchangeRate.Ruble,
-            rublePurchaseKursComUa, rubleSaleKursComUa);
+            dataTable.Rows.Add(ExchangeRate.KursComUaTitle, ExchangeRate.PLN,
+            PLNPurchaseKursComUa, PLNSaleKursComUa);
             dataTable.Rows.Add(ExchangeRate.FinanceUaTitle, ExchangeRate.Dollar,
             dollarPurchaseFinanceUa, dollarSaleFinanceUa);
             dataTable.Rows.Add(ExchangeRate.FinanceUaTitle, ExchangeRate.Euro,
             euroPurchaseFinanceUa, euroSaleFinanceUa);
-            dataTable.Rows.Add(ExchangeRate.FinanceUaTitle, ExchangeRate.Ruble,
-            rublePurchaseFinanceUa, rubleSaleFinanceUa);
+            dataTable.Rows.Add(ExchangeRate.FinanceUaTitle, ExchangeRate.PLN,
+            PLNPurchaseFinanceUa, PLNSaleFinanceUa);
             dataTable.Rows.Add(ExchangeRate.PrivatUaTitle, ExchangeRate.Dollar, dollarPurchasePrivat, dollarSalePrivat);
             dataTable.Rows.Add(ExchangeRate.PrivatUaTitle, ExchangeRate.Euro, euroPurchasePrivat, euroSalePrivat);
             return dataTable;

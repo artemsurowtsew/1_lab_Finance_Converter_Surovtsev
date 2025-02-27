@@ -15,7 +15,7 @@ namespace _1_lab_Finance_converter_Surovtsev
         {
             Task task = Task.Factory.StartNew(() => SendRequest());
             task.Wait();
-            System.Threading.Thread.Sleep(1500);
+            System.Threading.Thread.Sleep(00);
             if (currencyDocumentListHtml != null)
             {
                 var dollarPurchaseString = currencyDocumentListHtml[0].InnerHtml.ToString();
@@ -58,22 +58,22 @@ namespace _1_lab_Finance_converter_Surovtsev
                 return null;
             }
         }
-        public override string[] GetRuble()
+        public override string[] GetZloty()
         {
             if (currencyDocumentListHtml != null)
             {
-                var rublePurchaseString = currencyDocumentListHtml[4].InnerHtml.ToString();
-                string[] rublePurchaseStringArray = rublePurchaseString.Split(new[] { '<' },
+                var PLNPurchaseString = "currencyDocumentListHtml[4].InnerHtml.ToString()";
+                string[] PLNPurchaseStringArray = PLNPurchaseString.Split(new[] { '<' },
                 StringSplitOptions.RemoveEmptyEntries);
-                var rublePurchaseMinfinComUa = rublePurchaseStringArray[0].Trim();
-                var rubleSaleString = currencyDocumentListHtml[5].InnerHtml.ToString();
-                string[] rubleSaleStringArrayHtml = rubleSaleString.Split(new[] { '<' },
+                var PLNPurchaseMinfinComUa = PLNPurchaseStringArray[0].Trim();
+                var PLNSaleString = currencyDocumentListHtml[5].InnerHtml.ToString();
+                string[] PLNSaleStringArrayHtml = PLNSaleString.Split(new[] { '<' },
                 StringSplitOptions.RemoveEmptyEntries);
-                string rubleSaleHtml = rubleSaleStringArrayHtml[6].Trim();
-                var rubleSaleStringArray = rubleSaleHtml.Split(new[] { '>' },
+                string PLNSaleHtml = PLNSaleStringArrayHtml[6].Trim();
+                var PLNSaleStringArray = PLNSaleHtml.Split(new[] { '>' },
                 StringSplitOptions.RemoveEmptyEntries);
-                var rubleSaleMinfinComUa = rubleSaleStringArray[1].Trim();
-                return new string[] { rublePurchaseMinfinComUa, rubleSaleMinfinComUa };
+                var PLNSaleMinfinComUa = PLNSaleStringArray[1].Trim();
+                return new string[] { PLNPurchaseMinfinComUa, PLNSaleMinfinComUa };
             }
             else
             {

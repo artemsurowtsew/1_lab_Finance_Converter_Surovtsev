@@ -29,8 +29,10 @@ namespace _1_lab_Finance_converter_Surovtsev {
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-
-        
+        public ExchangeRate(string customParam)
+        {
+            // Custom logic here
+        }
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
@@ -141,11 +143,11 @@ namespace _1_lab_Finance_converter_Surovtsev {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to RUB.
+        ///   Looks up a localized string similar to PLN.
         /// </summary>
-        public static string Ruble {
+        public static string PLN {
             get {
-                return ResourceManager.GetString("Ruble", resourceCulture);
+                return ResourceManager.GetString("PLN", resourceCulture);
             }
         }
         

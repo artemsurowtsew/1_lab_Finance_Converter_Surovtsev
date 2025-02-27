@@ -144,8 +144,8 @@
   <data name="ResourceColumnTitle" xml:space="preserve">
     <value>Resource</value>
   </data>
-  <data name="Ruble" xml:space="preserve">
-    <value>RUB</value>
+  <data name="PLN" xml:space="preserve">
+    <value>PLN</value>
   </data>
   <data name="SaleColumnTitle" xml:space="preserve">
     <value>Sale</value>
