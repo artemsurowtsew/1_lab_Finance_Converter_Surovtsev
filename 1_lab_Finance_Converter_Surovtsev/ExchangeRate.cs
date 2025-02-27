@@ -12,7 +12,7 @@ namespace _1_lab_Finance_converter_Surovtsev
         euroSaleKursComUa, rublePurchaseKursComUa, rubleSaleKursComUa;
         static string dollarPurchaseFinanceUa, dollarSaleFinanceUa, euroPurchaseFinanceUa,
         euroSaleFinanceUa, rublePurchaseFinanceUa, rubleSaleFinanceUa;
-        static string dollarPurchasePrivat = "N/A", dollarSalePrivat = "N/A";
+        static string dollarPurchasePrivat= "N/A", dollarSalePrivat = "N/A";
         static string euroPurchasePrivat = "N/A", euroSalePrivat = "N/A";
 
         private DataGridView dataCurrencyTable;
