@@ -135,6 +135,9 @@
   <data name="MinfinComUaTitle" xml:space="preserve">
     <value>Minfin.com.ua</value>
   </data>
+  <data name="PrivatUaTitle" xml:space="preserve">
+    <value>Privat</value>
+  </data>
   <data name="PurchaseColumnTitle" xml:space="preserve">
     <value>Purchase</value>
   </data>

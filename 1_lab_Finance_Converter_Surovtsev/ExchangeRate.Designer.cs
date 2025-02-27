@@ -22,7 +22,7 @@ namespace _1_lab_Finance_converter_Surovtsev {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class ExchangeRate : Form {
+    public partial class ExchangeRate {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -110,6 +110,15 @@ namespace _1_lab_Finance_converter_Surovtsev {
         public static string MinfinComUaTitle {
             get {
                 return ResourceManager.GetString("MinfinComUaTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Privat.
+        /// </summary>
+        public static string PrivatUaTitle {
+            get {
+                return ResourceManager.GetString("PrivatUaTitle", resourceCulture);
             }
         }
         

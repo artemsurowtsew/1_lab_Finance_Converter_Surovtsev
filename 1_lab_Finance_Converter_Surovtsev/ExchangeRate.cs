@@ -12,6 +12,9 @@ namespace _1_lab_Finance_converter_Surovtsev
         euroSaleKursComUa, rublePurchaseKursComUa, rubleSaleKursComUa;
         static string dollarPurchaseFinanceUa, dollarSaleFinanceUa, euroPurchaseFinanceUa,
         euroSaleFinanceUa, rublePurchaseFinanceUa, rubleSaleFinanceUa;
+        static string dollarPurchasePrivate, dollarSalePrivate;
+        static string euroPurchasePrivate, euroSalePrivate;
+
         private DataGridView dataCurrencyTable;
         public Button LoadData;
 
@@ -179,6 +182,8 @@ namespace _1_lab_Finance_converter_Surovtsev
             euroPurchaseFinanceUa, euroSaleFinanceUa);
             dataTable.Rows.Add(ExchangeRate.FinanceUaTitle, ExchangeRate.Ruble,
             rublePurchaseFinanceUa, rubleSaleFinanceUa);
+            dataTable.Rows.Add(ExchangeRate.PrivatUaTitle, ExchangeRate.Dollar, dollarPurchasePrivate, dollarSalePrivate);
+            dataTable.Rows.Add(ExchangeRate.PrivatUaTitle, ExchangeRate.Euro, euroPurchasePrivate, euroSalePrivate);
             return dataTable;
         }
     }

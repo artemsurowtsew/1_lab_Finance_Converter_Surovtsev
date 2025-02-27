@@ -14,6 +14,7 @@ namespace _1_lab_Finance_converter_Surovtsev
             Task task = Task.Factory.StartNew(() => SendRequest());
             task.Wait();
             System.Threading.Thread.Sleep(1500);
+            htmlDocument = new HtmlDocument();
             if (htmlDocument != null)
             {
                 var dollarPurchaseDocumentListHtml = htmlDocument.DocumentNode.Descendants("tr")
